@@ -9,6 +9,7 @@ const uri = "https://dummyjson.com/users/search?q=";
 
 export default function App() {
     const [users, setUsers] = useState<User[]>([]);
+    console.log("App");
 
     const getData = useCallback((value: string) => {
         fetch(`${uri}${value}`)

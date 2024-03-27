@@ -8,10 +8,15 @@ export function SearchResults() {
     const { users } = useContext(SearchContext);
 
     return (
-        <div className="usersList">
-            {users.map((user) => (
-                <UserCard {...user} key={user.id} />
-            ))}
-        </div>
+        <>
+            <div className="usersList">
+                {users.map((user) => (
+                    <UserCard {...user} key={user.id} />
+                ))}
+            </div>
+            {!users.length && (
+                <div style={{ textAlign: "center" }}>Nothing Found</div>
+            )}
+        </>
     );
 }
